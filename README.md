@@ -2,7 +2,7 @@
 - This plug-in that allows you to control the damage taken by the vehicle.
 
 - How to use: Specify the value by which you want to multiply the damage from something.
-- Example: If you want to reduce damage by half, then specify 0.5.
+Example: If you want to reduce damage by half, then specify 0.5.
 
 - Configuration (Without XML syntax for clarity):
 - DamageFromBulletExplosion: 0.2

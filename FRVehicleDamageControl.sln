@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FRVehicleDamageControl", "FRVehicleDamageControl\FRVehicleDamageControl.csproj", "{DEA89C7F-60C5-4BCA-AD49-FD92A8D41C22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEA89C7F-60C5-4BCA-AD49-FD92A8D41C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA89C7F-60C5-4BCA-AD49-FD92A8D41C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA89C7F-60C5-4BCA-AD49-FD92A8D41C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA89C7F-60C5-4BCA-AD49-FD92A8D41C22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B54F47E-6703-4ED6-991C-5F7E280B6614}
+	EndGlobalSection
+EndGlobal

@@ -7,8 +7,8 @@
     <ProjectGuid>{DEA89C7F-60C5-4BCA-AD49-FD92A8D41C22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FRCarDamageUtils</RootNamespace>
-    <AssemblyName>FRCarDamageUtils</AssemblyName>
+    <RootNamespace>FRVehicleDamageControl</RootNamespace>
+    <AssemblyName>FRVehicleDamageControl</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

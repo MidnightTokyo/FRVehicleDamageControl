@@ -12,7 +12,7 @@ using Rocket.API;
 
 namespace FRCarDamageUtils.src
 {
-    public class Configuration : IRocketPluginConfiguration, IDefaultable
+    public class VehicleDamageControlConfiguration : IRocketPluginConfiguration, IDefaultable
     {
         public float DamageFromBulletExplosion;
         public float DamageFromAnimalAttack;

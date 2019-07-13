@@ -25,3 +25,4 @@ Configuration (Without XML syntax for clarity):
 - DamageFromZombieSwipe: 0.2
 
 Please do not use large or negative values (544545 or -133.3).
+If you need help, contact Fruten#3876.

@@ -1,5 +1,3 @@
-C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\bin\Release\FRCarDamageUtils.dll
-C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\bin\Release\FRCarDamageUtils.pdb
 C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\bin\Release\Assembly-CSharp-firstpass.dll
 C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\bin\Release\Assembly-CSharp.dll
 C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\bin\Release\Rocket.API.dll
@@ -11,5 +9,7 @@ C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl
 C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\obj\Release\FRVehicleDamageControl.csprojAssemblyReference.cache
 C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\obj\Release\FRVehicleDamageControl.csproj.CoreCompileInputs.cache
 C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\obj\Release\FRVehicleDamageControl.csproj.CopyComplete
-C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\obj\Release\FRCarDamageUtils.dll
-C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\obj\Release\FRCarDamageUtils.pdb
+C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\bin\Release\FRVehicleDamageControl.dll
+C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\bin\Release\FRVehicleDamageControl.pdb
+C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\obj\Release\FRVehicleDamageControl.dll
+C:\Users\Андрей\source\repos\FRVehicleDamageControl\FRVehicleDamageControl\obj\Release\FRVehicleDamageControl.pdb

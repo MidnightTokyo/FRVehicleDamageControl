@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FRCarDamageUtils.src;
-using Rocket.API;
-using Rocket.Core.Plugins;
+﻿using Rocket.Core.Plugins;
 using SDG.Unturned;
 using Steamworks;
 
-namespace FRCarDamageUtils
+namespace FRVehicleDamageControl
 {
     public class Plugin : RocketPlugin<VehicleDamageControlConfiguration>
     {
@@ -18,66 +11,72 @@ namespace FRCarDamageUtils
         protected override void Load()
         {
             Instance = this;
-            VehicleManager.onDamageVehicleRequested += new DamageVehicleRequestHandler(this.onCarGetDamage);
+            VehicleManager.onDamageVehicleRequested += OnVehicleGetDamage;
         }
 
-        public void onCarGetDamage(CSteamID instigatorSteamID, InteractableVehicle vehicle, ref ushort pendingTotalDamage, ref bool canRepair, ref bool shouldAllow, EDamageOrigin damageOrigin)
+        protected override void Unload()
+        {
+            Instance = null;
+            VehicleManager.onDamageVehicleRequested -= OnVehicleGetDamage;
+        }
+
+        public void OnVehicleGetDamage(CSteamID instigatorSteamId, InteractableVehicle vehicle, ref ushort pendingTotalDamage, ref bool canRepair, ref bool shouldAllow, EDamageOrigin damageOrigin)
         {
             switch (damageOrigin)
             {
                 case EDamageOrigin.Bullet_Explosion:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromBulletExplosion);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromBulletExplosion);
                     break;
                 case EDamageOrigin.Animal_Attack:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromAnimalAttack);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromAnimalAttack);
                     break;
                 case EDamageOrigin.Flamable_Zombie_Explosion:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromFlamableZombieExplosion);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromFlammableZombieExplosion);
                     break;
                 case EDamageOrigin.Food_Explosion:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromFoodExplosion);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromFoodExplosion);
                     break;
                 case EDamageOrigin.Mega_Zombie_Boulder:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromMegaZombieBoulder);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromMegaZombieBoulder);
                     break;
                 case EDamageOrigin.Punch:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromPunch);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromPunch);
                     break;
                 case EDamageOrigin.Radioactive_Zombie_Explosion:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromRadioactiveZombieExplosion);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromRadioactiveZombieExplosion);
                     break;
                 case EDamageOrigin.Rocket_Explosion:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromRocketExplosion);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromRocketExplosion);
                     break;
                 case EDamageOrigin.Sentry:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromSentry);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromSentry);
                     break;
                 case EDamageOrigin.Trap_Explosion:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromTrapExplosion);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromTrapExplosion);
                     break;
                 case EDamageOrigin.Useable_Gun:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromUseableGun);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromUseableGun);
                     break;
                 case EDamageOrigin.Useable_Melee:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromUseableMelee);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromUseableMelee);
                     break;
                 case EDamageOrigin.Vehicle_Bumper:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromVehicleBumper);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromVehicleBumper);
                     break;
                 case EDamageOrigin.Vehicle_Explosion:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromVehicleExplosion);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromVehicleExplosion);
                     break;
                 case EDamageOrigin.Zombie_Electric_Shock:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromZombieElectricShock);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromZombieElectricShock);
                     break;
                 case EDamageOrigin.Zombie_Fire_Breath:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromZombieFireBreath);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromZombieFireBreath);
                     break;
                 case EDamageOrigin.Zombie_Stomp:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromZombieStomp);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromZombieStomp);
                     break;
                 case EDamageOrigin.Zombie_Swipe:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Plugin.Instance.Configuration.Instance.DamageFromZombieSwipe);
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromZombieSwipe);
                     break;
             }
         }

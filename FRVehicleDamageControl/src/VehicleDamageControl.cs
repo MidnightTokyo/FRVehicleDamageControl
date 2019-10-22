@@ -39,9 +39,6 @@ namespace FRVehicleDamageControl
                 case EDamageOrigin.Mega_Zombie_Boulder:
                     pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromMegaZombieBoulder);
                     break;
-                case EDamageOrigin.Punch:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromPunch);
-                    break;
                 case EDamageOrigin.Radioactive_Zombie_Explosion:
                     pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromRadioactiveZombieExplosion);
                     break;
@@ -60,9 +57,6 @@ namespace FRVehicleDamageControl
                 case EDamageOrigin.Useable_Melee:
                     pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromUseableMelee);
                     break;
-                case EDamageOrigin.Vehicle_Bumper:
-                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromVehicleBumper);
-                    break;
                 case EDamageOrigin.Vehicle_Explosion:
                     pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromVehicleExplosion);
                     break;
@@ -77,6 +71,9 @@ namespace FRVehicleDamageControl
                     break;
                 case EDamageOrigin.Zombie_Swipe:
                     pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromZombieSwipe);
+                    break;
+                case EDamageOrigin.Vehicle_Collision_Self_Damage:
+                    pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromVehicleCollisionSelfDamage);
                     break;
             }
         }

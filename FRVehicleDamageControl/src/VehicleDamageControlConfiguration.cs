@@ -22,6 +22,7 @@ namespace FRVehicleDamageControl
         public float DamageFromZombieFireBreath;
         public float DamageFromZombieStomp;
         public float DamageFromZombieSwipe;
+        public float DamageFromVehicleCollisionSelfDamage;
 
 
         public void LoadDefaults()
@@ -44,6 +45,7 @@ namespace FRVehicleDamageControl
             DamageFromZombieFireBreath = 0.2f;
             DamageFromZombieStomp = 0.2f;
             DamageFromZombieSwipe = 0.2f;
+            DamageFromVehicleCollisionSelfDamage = 0.7f;
         }
     }
 }

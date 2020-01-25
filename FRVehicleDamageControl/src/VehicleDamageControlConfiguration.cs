@@ -23,7 +23,7 @@ namespace FRVehicleDamageControl
         public float DamageFromZombieStomp;
         public float DamageFromZombieSwipe;
         public float DamageFromVehicleCollisionSelfDamage;
-
+        public bool TireProtection;
 
         public void LoadDefaults()
         {
@@ -46,6 +46,7 @@ namespace FRVehicleDamageControl
             DamageFromZombieStomp = 0.2f;
             DamageFromZombieSwipe = 0.2f;
             DamageFromVehicleCollisionSelfDamage = 0.7f;
+            TireProtection = true;
         }
     }
 }

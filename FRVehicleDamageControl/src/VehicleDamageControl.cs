@@ -12,12 +12,15 @@ namespace FRVehicleDamageControl
         {
             Instance = this;
             VehicleManager.onDamageVehicleRequested += OnVehicleGetDamage;
+            VehicleManager.onDamageTireRequested += OnVehicleGetTireDamage;
+
         }
 
         protected override void Unload()
         {
             Instance = null;
             VehicleManager.onDamageVehicleRequested -= OnVehicleGetDamage;
+            VehicleManager.onDamageTireRequested -= OnVehicleGetTireDamage;
         }
 
         public void OnVehicleGetDamage(CSteamID instigatorSteamId, InteractableVehicle vehicle, ref ushort pendingTotalDamage, ref bool canRepair, ref bool shouldAllow, EDamageOrigin damageOrigin)
@@ -75,6 +78,15 @@ namespace FRVehicleDamageControl
                 case EDamageOrigin.Vehicle_Collision_Self_Damage:
                     pendingTotalDamage = (ushort)(pendingTotalDamage * Instance.Configuration.Instance.DamageFromVehicleCollisionSelfDamage);
                     break;
+            }
+        }
+
+        public void OnVehicleGetTireDamage(CSteamID instigatorSteamId, InteractableVehicle vehicle, int tireIndex, ref bool shouldAllow, EDamageOrigin damageOrigin)
+        {
+            if (Instance.Configuration.Instance.TireProtection)
+            {
+                vehicle.asset.canTiresBeDamaged = false;
+                vehicle.askRepairTire(tireIndex);
             }
         }
     }

@@ -22,6 +22,7 @@ Example: If you want to reduce damage by half, then specify 0.5.
 - DamageFromZombieStomp: 0.0 - Disable damage.
 - DamageFromZombieSwipe: 0.2
 - DamageFromVehicleCollisisonSelfDamage: 0.7
+- TireProtection: true - Is it possible to break the tires?
 
 Please do not use large or negative values (544545 or -133.3).
 If you need help, contact Fruten#3876.

@@ -25,4 +25,4 @@ Example: If you want to reduce damage by half, then specify 0.5.
 - TireProtection: true - Is it possible to break the tires?
 
 Please do not use large or negative values (544545 or -133.3).
-If you need help, contact Fruten#3876.
+If you need help, contact midnight tokyo#2010.
